@@ -8,6 +8,6 @@ import { Tema } from './entities/tema.entity';
   imports: [TypeOrmModule.forFeature([Tema])],
   providers: [TemaService],
   controllers: [TemaController],
-  exports: [],
+  exports: [TemaService],
 })
 export class TemaModule {}
