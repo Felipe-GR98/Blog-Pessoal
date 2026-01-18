@@ -10,8 +10,8 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { PostagemService } from '../../tema/services/postagem.service';
 import { Postagem } from '../entities/postagens.entity';
+import { PostagemService } from '../service/postagem.service';
 
 @Controller('/postagens') //chama os serviços
 export class PostagemController {

@@ -11,8 +11,8 @@ import {
   Put,
 } from '@nestjs/common';
 
-import { TemaService } from '../entities/services/tema.services';
 import { Tema } from '../entities/tema.entity';
+import { TemaService } from '../services/tema.services';
 
 @Controller('/temas') //chama os serviços
 export class TemaController {
@@ -31,7 +31,7 @@ export class TemaController {
   }
   @Get('/descricao/:descricao')
   @HttpCode(HttpStatus.OK)
-  findByDescription(@Param('descicao') descricao: string): Promise<Tema[]> {
+  findByDescription(@Param('descricao') descricao: string): Promise<Tema[]> {
     return this.TemaServices.findByDescription(descricao);
   }
 
