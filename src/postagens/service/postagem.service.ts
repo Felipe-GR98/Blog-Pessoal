@@ -33,7 +33,7 @@ export class PostagemService {
       },
     });
     if (!postagem) {
-      throw new HttpException('Postagem não esncontrada', HttpStatus.NOT_FOUND);
+      throw new HttpException('Postagem não encontrada', HttpStatus.NOT_FOUND);
     }
     return postagem;
   }

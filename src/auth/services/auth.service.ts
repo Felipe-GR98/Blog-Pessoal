@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UsuarioService } from '../../usuario/service/usuario.service';
 import { Bcrypt } from '../bcrypt/bcrypt';
-import { UsuarioLogin } from '../entities/usuarios.estiti';
+import { UsuarioLogin } from '../entities/usuarioLogin.entity';
 
 @Injectable()
 export class AuthService {
@@ -23,6 +23,7 @@ export class AuthService {
     );
 
     if (buscaUsuario && matchPassword) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { senha, ...resposta } = buscaUsuario;
       return resposta;
     }

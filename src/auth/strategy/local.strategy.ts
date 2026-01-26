@@ -1,6 +1,6 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
-import { Strategy } from 'passport-jwt';
+import { Strategy } from 'passport-local';
 import { AuthService } from '../services/auth.service';
 
 @Injectable()
@@ -14,6 +14,7 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
     this._passwordField = 'senha';
   }
   async validate(usuario: string, senha: string): Promise<any> {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const validaUsuario = await this.authServide.validateUser(usuario, senha);
     if (!validaUsuario) {
       throw new UnauthorizedException('Usuário/ ou senha incorretos');
