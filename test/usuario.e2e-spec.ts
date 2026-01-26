@@ -43,7 +43,7 @@ describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
       })
       .expect(201);
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     usuarioId = resposta.body.id;
   });
 
@@ -68,7 +68,7 @@ describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
       })
       .expect(200);
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     token = resposta.body.token;
   });
 
@@ -85,6 +85,7 @@ describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
       .put('/usuarios/atualizar')
       .set('Authorization', `${token}`)
       .send({
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         id: usuarioId,
         nome: 'Root Atualizado',
         usuario: 'root@root.com',
@@ -93,6 +94,7 @@ describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
       })
       .expect(200)
       .then((resposta) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         expect('Root Atualizado').toEqual(resposta.body.nome);
       });
   });
