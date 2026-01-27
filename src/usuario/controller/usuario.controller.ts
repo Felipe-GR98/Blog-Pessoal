@@ -21,7 +21,7 @@ import { UsuarioService } from '../service/usuario.service';
 export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
 
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard) // Decidimos quais regras de validações vamos usar
   @Get('/all')
   @HttpCode(HttpStatus.OK)
   findAll(): Promise<Usuario[]> {

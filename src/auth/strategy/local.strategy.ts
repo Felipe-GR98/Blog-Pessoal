@@ -5,6 +5,7 @@ import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
+  // Validar o User e Senha
   private _usernameField: string;
   private _passwordField: string;
 

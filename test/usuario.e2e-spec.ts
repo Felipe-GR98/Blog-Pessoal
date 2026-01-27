@@ -33,6 +33,7 @@ describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
   });
 
   it('01 - Deve Cadastrar um novo Usuário', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const resposta = await request(app.getHttpServer())
       .post('/usuarios/cadastrar')
       .send({
@@ -48,6 +49,7 @@ describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
   });
 
   it('02 - Não Deve Cadastrar um Usuário Duplicado', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     await request(app.getHttpServer())
       .post('/usuarios/cadastrar')
       .send({
@@ -60,6 +62,7 @@ describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
   });
 
   it('03 - Deve Autenticar o Usuário (Login)', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const resposta = await request(app.getHttpServer())
       .post('/usuarios/logar')
       .send({
@@ -73,6 +76,7 @@ describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
   });
 
   it('04 - Deve Listar todos os Usuários', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     return request(app.getHttpServer())
       .get('/usuarios/all')
       .set('Authorization', `${token}`)
@@ -81,6 +85,7 @@ describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
   });
 
   it('05 - Deve Atualizar um Usuário', async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     return request(app.getHttpServer())
       .put('/usuarios/atualizar')
       .set('Authorization', `${token}`)

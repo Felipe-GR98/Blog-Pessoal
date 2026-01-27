@@ -10,6 +10,7 @@ import { JwtStrategy } from './strategy/jwt.strategy';
 import { LocalStrategy } from './strategy/local.strategy';
 
 @Module({
+  // Preparar a criptografia (Bcrypt) e a estrutura base
   imports: [
     forwardRef(() => UsuarioModule),
     PassportModule,
